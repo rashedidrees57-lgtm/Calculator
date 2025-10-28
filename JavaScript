@@ -1,0 +1,12 @@
+function addNumbers(x, y){
+document.getElementById("result").innerHTML = x + y;
+}
+function addNumbers(x, y){
+document.getElementById("result").innerHTML = x * y;
+}
+function addNumbers(x, y){
+document.getElementById("result").innerHTML = x / y;
+}
+function addNumbers(x, y){
+document.getElementById("result").innerHTML = x - y;
+}
