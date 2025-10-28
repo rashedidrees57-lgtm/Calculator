@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="MyJS.js"></script>
+    <style type="text/CSS" src="Mysheet.css"></style>
+  <meta charset="UTF-8">
+  <title>Basic Calculator</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="display" disabled value="">
+    <div class="buttons">
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('+')" class="operator">+</button>
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')" class="operator">-</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('*')" class="operator">X</button>
+      <button onclick="clearDisplay()" class="clear">C</button>
+      <button onclick="append('0')">0</button>
+      <button onclick="calculate()" class="equals">=</button>
+      <button onclick="append('/')" class="operator">/</button>
+    </div>
+  </div>
+  <script>
+    const display = document.getElementById('display');
+
+    function append(char) {
+      if(char === "X") char = "*";
+      display.value += char;
+    }
+
+    function clearDisplay() {
+      display.value = '';
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value.replace(/[^-()\d/*+.]/g, ''));
+      } catch (e) {
+        display.value = "Error";
+      }
+    }
+  </script>
+</body>
+</html>
